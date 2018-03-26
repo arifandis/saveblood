@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="login-style.css">
+    <link rel="icon" type="image/png" href="img/icon/blood-icon-2.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="form">
+            <div class="title-login">Sign In</div>
+            <input type="email" name="email" id="email-input" placeholder="Email" required>
+            <br>
+            <input type="password" name="password" id="password-input" placeholder="Password" required>
+            <br>
+            <button id="login-button" type="submit">SIGN IN</button>
+            <p class="message">Not registered?
+                <a href="register.html">Create an account</a>
+            </p>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDS80mIbNSbRJF5cyab79HHULZ_PPb0Im0",
+            authDomain: "saveblood-fe450.firebaseapp.com",
+            databaseURL: "https://saveblood-fe450.firebaseio.com",
+            projectId: "saveblood-fe450",
+            storageBucket: "saveblood-fe450.appspot.com",
+            messagingSenderId: "244166964575"
+        };
+        firebase.initializeApp(config);
+
+        var auth = firebase.auth();
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                location.href = "home.html";
+            } else {
+
+            }
+        });
+
+        var email = document.getElementById('email-input');
+        var password = document.getElementById('password-input');
+        var signInBtn = document.getElementById('login-button');
+
+        signInBtn.addEventListener('click', signIn);
+
+        function signIn() {
+            auth.signInWithEmailAndPassword(email.value, password.value)
+                .then(function (data) {
+                    location.href = "home.html";
+                    console.log(data);
+                }).catch(function (err) {
+                    alert("Invalid email or password!")
+                    console.log(err);
+                })
+        }
+    </script>
+</body>
+
+</html>

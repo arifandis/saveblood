@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="home-style.css">
+    <link rel="icon" type="image/png" href="img/icon/blood-icon-2.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="navbar">
+        <div class="main-navbar">
+            <a id="saveblood-link-button" href="#row-1"><span>SAVEBLOOD!</span></a>
+        </div>
+        <div class="sub-navbar">
+            <div><a href="#row-2" id="about-link-button"><span>ABOUT</span></a></div>
+            <div><a href="#row-3" id="event-link-button"><span>PARTNERSHIP EVENT</span></a></div>
+            <div><a href="#row-4" id="info-link-button"><span>INFORMASI</span></a></div>
+            <div><a id="logout-link-button"><span>LOGOUT</span></div></a>
+        </div>
+    </div>
+    <div id="row-1" class="row-1">
+        <div class="desc">
+            <h1 id="slogan">SAVE A LIFE, GIVE BLOOD</h1>
+            <div class="block"></div>
+            <p id="desc-web">Website ini merupakan sistem informasi yang bertujuan memenuhi kebutuhan darah di sekitar kota Malang</p><br>
+            <a href="#row-2"><button id="button-findout">FIND OUT MORE</button></a>
+        </div>
+    </div>
+    <div id="row-2" class="row-2">
+        <h2 id="msg">Welcome</h2>
+        <div class="block"></div>
+        <p id="desc-web">Mari Bersama Berkontribusi untuk Donor Darah</p>
+        <a href="profile.html"><button id="button-getstarted">GO TO PROFILE</button></a>
+    </div>
+    <div id="row-3" class="row-3">
+        <h2 id="sub-title-event">Event Donor Darah di Malang</h2>
+        <div class="sub-row-3">
+            <div class="row-3-column-1">
+                <div class="desc-field">
+                    <br> <span id="desc-1">HUT FK UB - RSUB Suhat</span>
+                </div>
+                <div class="time">
+                    <span id="time-1">23 Maret 2018</span><br>
+                    <span>13:00 WIB</span><br>
+                    <button id="join-button-1">Join</button>
+                </div>
+            </div>
+            <div class="row-3-column-2">
+                <div class="desc-field">
+                    <br> <span id="desc-2">HMJ Fak. Teknik Sipil Unmer Malang</span>
+                </div>
+                <div class="time">
+                        <span id="time-2">24 Maret 2018</span><br>
+                        <span>08:30 WIB</span><br>
+                        <button id="join-button-2">Join</button>
+                    </div>
+            </div>
+            <div class="row-3-column-3">
+                <div class="desc-field">
+                    <br> <span id="desc-3">KSR STIE Malang Kucecwara</span>
+                </div>
+                <div class="time">
+                        <span id="time-3">28 Maret 2018</span><br>
+                    <span>07:30 WIB</span><br>
+                    <button id="join-button-3">Join</button>
+                    </div>
+            </div>
+            <div class="row-3-column-4">
+                <div class="desc-field">
+                    <br> <span id="desc-4">FIK UM</span>
+                </div>
+                <div class="time">
+                        <span id="time-1">09 September 2018</span><br>
+                        <span>07:30 WIB</span><br>
+                        <button id="join-button-4">Join</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="row-4" class="row-4">
+        <div class="desc-info">
+            <div class="info">
+                <span>Informasi</span>
+            </div>
+            <p id="text-info">Donor darah adalah kegiatan yang positif dan mulia karena kita bisa menolong sesama. Donor darah bisa 
+                    membantu mereka yang membutuhkan darah dalam situasi mendesak. Karena seringkali saat pasien dalam 
+                    kondisi kritis, pihak PMI atau rumah sakit tak memiliki stok darah yang cukup. Nyatanya, donor darah 
+                    tak hanya bermanfaat bagi penerima (resipien) saja, namun pendonor juga menerima manfaat yang luar 
+                    biasa. Banyak penelitian yang berhasil membuktikan secara medis bahwa mendonorkan darah sebenarnya 
+                    menguntungkan. Gak percaya? Berikut manfaaat donor darah yang wajib kamu tahu!</p>
+            <a href="news-after-login.html"><button id="read-more-button">Read More</button></a>
+            <div class="info-contact">
+                <span id="info-contact-title">Ayo Donor Darah!</span><br><br>
+                Hubungi kami di:
+            </div>
+            <div class="contact">
+                <div class="handphone">
+                    <img src="img/icon/ic_phone_small.png" alt="phone"><br>
+                    <span>081375810493</span>
+                </div>
+                <div class="email">
+                    <img src="img/icon/ic_email_small.png" alt="email"><br>
+                    <span>saveblood@admin.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDS80mIbNSbRJF5cyab79HHULZ_PPb0Im0",
+            authDomain: "saveblood-fe450.firebaseapp.com",
+            databaseURL: "https://saveblood-fe450.firebaseio.com",
+            projectId: "saveblood-fe450",
+            storageBucket: "saveblood-fe450.appspot.com",
+            messagingSenderId: "244166964575"
+        };
+        firebase.initializeApp(config);
+
+        var auth = firebase.auth();
+
+        var joinBtn1 = document.getElementById("join-button-1");
+        var joinBtn2 = document.getElementById("join-button-2");
+        var joinBtn3 = document.getElementById("join-button-3");
+        var joinBtn4 = document.getElementById("join-button-4");
+        var signOutBtn = document.getElementById("logout-link-button");
+        var profileBtn = document.getElementById("button-getstarted");
+
+        signOutBtn.addEventListener('click', signOut);
+        joinBtn1.addEventListener('click', btnJoin1);
+        joinBtn2.addEventListener('click', btnJoin2);
+        joinBtn3.addEventListener('click', btnJoin3);
+        joinBtn4.addEventListener('click', btnJoin4);
+
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                var userId = firebase.auth().currentUser.uid;
+                return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+                var name = (snapshot.val() && snapshot.val().name) || 'Anonymous';
+                var point =(snapshot.val() && snapshot.val().point);
+                // ...
+                document.getElementById("msg").innerHTML = "Welcome " + name;
+                });
+            } else {
+                location.href = "index.html";
+            }
+        });
+
+        function signOut(){
+            firebase.auth().signOut()
+            .then(function() {
+                // Sign-out successful.
+                alert("Sign Out Success!!");
+                location.href = "index.html";
+                console.log("success");
+                
+            })
+            .catch(function(error) {
+                // An error happened
+                console.log(error);
+            });
+        }
+
+        function btnJoin1(){
+            var userId = firebase.auth().currentUser.uid;
+            var db = firebase.database().ref();
+            return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+                var point2 = (snapshot.val() && snapshot.val().point);
+                // var last = (snapshot.val() && snapshot.val().lastEvent);
+                var last = "HUT FK UB - RSUB Suhat";
+                // ...
+                var point = point2+100;
+                var data = {
+                    point: point,
+                    lastEvent: last,
+                };
+                
+                db.child('/users/'+userId).update(data);
+                location.href = "https://www.google.co.id/maps/place/Brawijaya+University+Medical+School/@-7.9554583,112.611599,17z/data=!3m1!4b1!4m5!3m4!1s0x2e78827a26cf2f13:0xf4a1a9b28b61a5fd!8m2!3d-7.9554636!4d112.6137877?hl=en";
+            });
+        }
+        function btnJoin2(){
+            var userId = firebase.auth().currentUser.uid;
+            var db = firebase.database().ref();
+            return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+                var point2 = (snapshot.val() && snapshot.val().point);
+                // ...
+                var last = "HMJ Fak. Teknik Sipil Unmer Malang";
+                // ...
+                var point = point2+100;
+                var data = {
+                    point: point,
+                    lastEvent: last,
+                };
+
+                db.child('/users/'+userId).update(data);
+                location.href = "https://www.google.co.id/maps/place/University+Merdeka+Malang/@-7.9724567,112.6073463,17z/data=!3m1!4b1!4m5!3m4!1s0x2dd6282b59adba8f:0xedb4ecc5e4924fbc!8m2!3d-7.972462!4d112.609535?hl=en";
+            });
+        }
+        function btnJoin3(){
+            var userId = firebase.auth().currentUser.uid;
+            var db = firebase.database().ref();
+            return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+                var point2 = (snapshot.val() && snapshot.val().point);
+                // ...
+                var last = "KSR STIE Malang Kucecwara";
+                // ...
+                var point = point2+100;
+                var data = {
+                    point: point,
+                    lastEvent: last,
+                };
+
+                db.child('/users/'+userId).update(data);
+                location.href = "https://www.google.co.id/maps/place/STIE+Malangkucecwara/@-7.9419837,112.6348743,17z/data=!3m1!4b1!4m5!3m4!1s0x2dd629c2206a7337:0xf94db875ac90b7da!8m2!3d-7.941989!4d112.637063?hl=en";
+            });
+        }
+        function btnJoin4(){
+            var userId = firebase.auth().currentUser.uid;
+            var db = firebase.database().ref();
+            return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+                var point2 = (snapshot.val() && snapshot.val().point);
+                
+                var last = "FIK UM"
+                // ...
+                var point = point2+100;
+                var data = {
+                    point: point,
+                    lastEvent: last,
+                };
+
+                db.child('/users/'+userId).update(data);
+                location.href = "https://www.google.co.id/maps/place/Fakultas+Ilmu+Keolahragaan+UM/@-7.9596579,112.6186817,17z/data=!3m1!4b1!4m5!3m4!1s0x2dd629d577a405f7:0xd8fa78e19ff30f04!8m2!3d-7.9596632!4d112.6208704?hl=en";
+            });
+        }
+
+        function updateHistory(uid){
+            var keyHistory = firebase.database().ref().child('users/'+uid+'/history').push().key;
+
+
+        }
+    </script>
+</body>
+</html>

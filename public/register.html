@@ -1,0 +1,90 @@
+<!DOCTYPE>
+<html lang="en">
+
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="register-style.css">
+    <link rel="icon" type="image/png" href="img/icon/blood-icon-2.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="register-page">
+        <div class="form">
+            <div class="title-login">Sign Up</div>
+            <input type="text" name="nama" id="nama-input" placeholder="Name" required>
+            <br>
+            <input type="email" name="email" id="email-input" placeholder="Email" required>
+            <br>
+            <input type="password" name="password" id="password-input" placeholder="Password" required>
+            <br>
+            <button id="register-button" type="submit">SIGN UP</button>
+            <!-- <p class="message">Not registered?
+                <a href="register.html">Create an account</a>
+            </p> -->
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDS80mIbNSbRJF5cyab79HHULZ_PPb0Im0",
+            authDomain: "saveblood-fe450.firebaseapp.com",
+            databaseURL: "https://saveblood-fe450.firebaseio.com",
+            projectId: "saveblood-fe450",
+            storageBucket: "saveblood-fe450.appspot.com",
+            messagingSenderId: "244166964575"
+        };
+        firebase.initializeApp(config);
+
+        var auth = firebase.auth();
+        var database = firebase.database();
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                location.href = "home.html";
+            } else {
+
+            }
+        });
+
+        var nama = document.getElementById('nama-input');
+        var email = document.getElementById('email-input');
+        var password = document.getElementById('password-input');
+        var signUpnBtn = document.getElementById('register-button');
+
+        signUpnBtn.addEventListener('click', signUp);
+
+        function signUp() {
+            auth.createUserWithEmailAndPassword(email.value, password.value)
+                .then(function (data) {
+                    var user = firebase.auth().currentUser;
+                    var nameUser, emailUser, uid;
+                    if (user != null) {
+                        nameUser = nama.value;
+                        emailUser = user.email;
+                        uid = user.uid;
+                    }
+                    writeUserData(uid, nameUser, emailUser);
+
+                    alert("Register berhasil!")
+                    console.log("--login--")
+                    console.log(data)
+                    location.href = "home.html";
+                }).catch(function (err) {
+                    console.log(err)
+                })
+        }
+        function writeUserData(userId, name, email) {
+            firebase.database().ref('users/' + userId).set({
+                name: name,
+                email: email,
+                point: 0,
+                lastEvent: "-",
+            });
+        }
+    </script>
+</body>
+
+</html>

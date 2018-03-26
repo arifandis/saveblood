@@ -1,0 +1,32 @@
+[debug] [2018-03-24T13:58:56.617Z] ----------------------------------------------------------------------
+[debug] [2018-03-24T13:58:56.617Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\DARKNESS\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-03-24T13:58:56.617Z] CLI Version:   3.17.6
+[debug] [2018-03-24T13:58:56.617Z] Platform:      win32
+[debug] [2018-03-24T13:58:56.617Z] Node Version:  v9.3.0
+[debug] [2018-03-24T13:58:56.617Z] Time:          Sat Mar 24 2018 20:58:56 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-24T13:58:56.617Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-24T13:58:56.649Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-24T13:58:56.649Z] > authorizing via signed-in user
+[debug] [2018-03-24T13:58:56.649Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/saveblood-fe450  
+  
+ Sat Mar 24 2018 20:58:56 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-24T13:58:57.902Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-24T13:58:57.918Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/saveblood-fe450/tokens  
+  
+ Sat Mar 24 2018 20:58:57 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-24T13:58:58.919Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-24T13:58:58.919Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/saveblood-fe450  
+  
+ Sat Mar 24 2018 20:58:58 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-24T13:59:01.623Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\DARKNESS\desktop\SaveBlood!'...
+[info] 
+[debug] [2018-03-24T13:59:01.623Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/244166964575/clients/_:getWebAppConfig  
+  
+ Sat Mar 24 2018 20:59:01 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-24T13:59:03.059Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+

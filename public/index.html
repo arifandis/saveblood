@@ -1,0 +1,135 @@
+<!DOCTYPE hmtl>
+<html lang="en">
+
+<head>
+    <title>SaveBlood!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/icon/blood-icon-2.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="navbar">
+        <div class="main-navbar">
+            <a id="saveblood-link-button" href="#row-1"><span>SAVEBLOOD!</span></a>
+        </div>
+        <div class="sub-navbar">
+            <div><a href="#row-2" id="about-link-button"><span>ABOUT</span></a></div>
+            <div><a href="#row-3" id="event-link-button"><span>PARTNERSHIP EVENT</span></a></div>
+            <div><a href="#row-4" id="info-link-button"><span>INFORMASI</span></a></div>
+            <div><a href="login.html"><span id="login-link-button">LOGIN</span></div></a>
+        </div>
+    </div>
+    <div id="row-1" class="row-1">
+        <div class="desc">
+            <h1 id="slogan">SAVE A LIFE, GIVE BLOOD</h1>
+            <div class="block"></div>
+            <p id="desc-web">Website ini merupakan sistem informasi yang bertujuan memenuhi kebutuhan darah di sekitar kota Malang</p><br>
+            <a href="#row-2"><button id="button-findout">FIND OUT MORE</button></a>
+        </div>
+    </div>
+    <div id="row-2" class="row-2">
+        <h2 id="msg">We've got what you need!</h2>
+        <div class="block"></div>
+        <p id="desc-web">Mari Bersama Berkontribusi untuk Donor Darah</p>
+        <a href="#row-3"><button id="button-getstarted">GET STARTED!</button></a>
+    </div>
+    <div id="row-3" class="row-3">
+        <h2 id="sub-title-event">Event Donor Darah di Malang</h2>
+        <div class="sub-row-3">
+            <div class="row-3-column-1">
+                <div class="desc-field">
+                    <br> <span id="desc-1">HUT FK UB - RSUB Suhat</span>
+                </div>
+                <div class="time">
+                    <span id="time-1">23 Maret 2018</span><br>
+                    <span>13:00 WIB</span><br>
+                    <a href="login.html"><button id="join-button-1">Join</button></a> 
+                </div>
+            </div>
+            <div class="row-3-column-2">
+                <div class="desc-field">
+                    <br> <span id="desc-2">HMJ Fak. Teknik Sipil Unmer Malang</span>
+                </div>
+                <div class="time">
+                        <span id="time-2">24 Maret 2018</span><br>
+                        <span>08:30 WIB</span><br>
+                        <a href="login.html"><button id="join-button-1">Join</button></a> 
+                    </div>
+            </div>
+            <div class="row-3-column-3">
+                <div class="desc-field">
+                    <br> <span id="desc-3">KSR STIE Malang Kucecwara</span>
+                </div>
+                <div class="time">
+                        <span id="time-3">28 Maret 2018</span><br>
+                    <span>07:30 WIB</span><br>
+                    <a href="login.html"><button id="join-button-1">Join</button></a> 
+                    </div>
+            </div>
+            <div class="row-3-column-4">
+                <div class="desc-field">
+                    <br> <span id="desc-4">FIK UM</span>
+                </div>
+                <div class="time">
+                        <span id="time-1">09 September 2018</span><br>
+                        <span>07:30 WIB</span><br>
+                        <a href="login.html"><button id="join-button-1">Join</button></a> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="row-4" class="row-4">
+        <div class="desc-info">
+            <div class="info">
+                <span>Informasi</span>
+            </div>
+            <p id="text-info">Donor darah adalah kegiatan yang positif dan mulia karena kita bisa menolong sesama. Donor darah bisa 
+                    membantu mereka yang membutuhkan darah dalam situasi mendesak. Karena seringkali saat pasien dalam 
+                    kondisi kritis, pihak PMI atau rumah sakit tak memiliki stok darah yang cukup. Nyatanya, donor darah 
+                    tak hanya bermanfaat bagi penerima (resipien) saja, namun pendonor juga menerima manfaat yang luar 
+                    biasa. Banyak penelitian yang berhasil membuktikan secara medis bahwa mendonorkan darah sebenarnya 
+                    menguntungkan. Gak percaya? Berikut manfaaat donor darah yang wajib kamu tahu!</p>
+            <a href="news.html"><button id="read-more-button">Read More</button></a>
+            <div class="info-contact">
+                <span id="info-contact-title">Ayo Donor Darah!</span><br><br>
+                Hubungi kami di:
+            </div>
+            <div class="contact">
+                <div class="handphone">
+                    <img src="img/icon/ic_phone_small.png" alt="phone"><br>
+                    <span>081375810493</span>
+                </div>
+                <div class="email">
+                    <img src="img/icon/ic_email_small.png" alt="email"><br>
+                    <span>saveblood@admin.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDS80mIbNSbRJF5cyab79HHULZ_PPb0Im0",
+            authDomain: "saveblood-fe450.firebaseapp.com",
+            databaseURL: "https://saveblood-fe450.firebaseio.com",
+            projectId: "saveblood-fe450",
+            storageBucket: "saveblood-fe450.appspot.com",
+            messagingSenderId: "244166964575"
+        };
+        firebase.initializeApp(config);
+
+        var auth = firebase.auth();
+
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                location.href = "home.html";
+            } else {
+                // No user is signed in.
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="icon" type="image/png" href="img/icon/blood-icon-2.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="main-navbar">
+            <a id="saveblood-link-button" href="home.html">
+                <span>SAVEBLOOD!</span>
+            </a>
+        </div>
+        <div class="sub-navbar">
+            <div>
+                <a href="#row-2" id="about-link-button">
+                    <span></span>
+                </a>
+            </div>
+            <div>
+                <a href="#row-3" id="event-link-button">
+                    <span></span>
+                </a>
+            </div>
+            <div>
+                <a href="#row-4" id="info-link-button">
+                    <span></span>
+                </a>
+            </div>
+            <div>
+                <a id="logout-link-button">
+                    <span>LOGOUT</span>
+            </div>
+            </a>
+        </div>
+    </div>
+    <div id="row-1" class="row-1">
+        <div class="head-profile">
+            <h2 id="msg">Welcome</h2>
+            <div class="block"></div>
+            <p id="desc-web">Point: 0</p>
+            <button id="button-getstarted">REWARD</button>
+        </div>
+        <div class="urgent">
+            <h1>Last Event</h1>
+            <h2 id="last-e"></h2>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDS80mIbNSbRJF5cyab79HHULZ_PPb0Im0",
+            authDomain: "saveblood-fe450.firebaseapp.com",
+            databaseURL: "https://saveblood-fe450.firebaseio.com",
+            projectId: "saveblood-fe450",
+            storageBucket: "saveblood-fe450.appspot.com",
+            messagingSenderId: "244166964575"
+        };
+        firebase.initializeApp(config);
+
+        var signOutBtn = document.getElementById("logout-link-button");
+
+        signOutBtn.addEventListener('click', signOut);
+
+        var auth = firebase.auth();
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                var userId = firebase.auth().currentUser.uid;
+                return firebase.database().ref('/users/' + userId).once('value').then(function (snapshot) {
+                    var name = (snapshot.val() && snapshot.val().name) || 'Anonymous';
+                    var point = (snapshot.val() && snapshot.val().point);
+                    var lastEvent = (snapshot.val() && snapshot.val().lastEvent);
+                    // ...
+                    document.getElementById("msg").innerHTML = name;
+                    document.getElementById("desc-web").innerHTML = "Point: " + point;
+                    document.getElementById("last-e").innerHTML = lastEvent;
+                });
+            } else {
+                location.href = "index.html"
+            }
+        });
+        function signOut() {
+            firebase.auth().signOut()
+                .then(function () {
+                    // Sign-out successful.
+                    alert("Sign Out Success!!");
+                    location.href = "index.html";
+                    console.log("success");
+
+                })
+                .catch(function (error) {
+                    // An error happened
+                    console.log(error);
+                });
+        }
+    </script>
+</body>
+
+</html>

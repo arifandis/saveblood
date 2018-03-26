@@ -1,0 +1,59 @@
+body{
+  font-family: 'Source Sans Pro';
+  margin: 0;
+  background-image: url(img/blood-donate.jpg);
+}
+
+.form{
+  display: block;
+  width: 300px;
+  height: 300px;
+  background: white;
+  text-align: center;
+  margin-top: 10%;
+  margin-left: 40%;
+  border: 2px solid rgb(99, 99, 99);
+}
+
+.title-login{
+  height: 40px;
+  background: #c50303;
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+#email-input{
+  margin-top: 30px;
+  width: 200px;
+  height: 40px;
+  border: 1px solid rgb(107, 107, 107);
+  border-radius: 20px;
+  font-family: 'Source Sans Pro';
+  text-align: center;
+  font-size: 15px;
+}
+
+#password-input{
+  margin-top: 10px;
+  width: 200px;
+  height: 40px;
+  border: 1px solid rgb(107, 107, 107);
+  border-radius: 20px;
+  font-family: 'Source Sans Pro';
+  text-align: center;
+  font-size: 15px;
+}
+
+#login-button{
+  margin-top: 30px;
+  border: 1px solid #c50303;
+  background: #c50303;
+  border-radius: 20px;
+  width: 100px;
+  font-size: 15px;
+  height: 30px;
+  color: white;
+  font-family: "Source Sans Pro";
+}

@@ -1,0 +1,231 @@
+::selection {
+  color: #fff;
+  background: #212529;
+  text-shadow: none;
+}
+img::selection {
+  color: #fff;
+  background: 0 0;
+}
+img::-moz-selection {
+  color: rgb(3, 2, 2);
+  background: 0 0;
+}
+#mainNav {
+  border-bottom: 1px solid rgba(33, 37, 41, 0.1);
+  background-color: rgb(238, 83, 83);
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#mainNav .navbar-brand1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #f05f40;
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+}
+#mainNav .navbar-brand1:focus,
+#mainNav .navbar-brand1:hover {
+  color: #f05f40;
+}
+#mainNav .navbar-nav > li.nav-item1 > a.nav-link,
+#mainNav .navbar-nav > li.nav-item1 > a.nav-link:focus {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #212529;
+}
+#mainNav .navbar-nav > li.nav-item1 > a.nav-link:focus:hover,
+#mainNav .navbar-nav > li.nav-item > a.nav-link:hover {
+  color: #f05f40;
+}
+#mainNav .navbar-nav > li.nav-item1 > a.nav-link.active,
+#mainNav .navbar-nav > li.nav-item1 > a.nav-link:focus.active {
+  color: #f05f40 !important;
+  background-color: transparent;
+}
+#mainNav .navbar-nav > li.nav-item1 > a.nav-link.active:hover,
+#mainNav .navbar-nav > li.nav-item1 > a.nav-link:focus.active:hover {
+  background-color: transparent;
+}
+@media (min-width: 992px) {
+  #mainNav {
+    border-color: transparent;
+    background-color: transparent;
+  }
+  #mainNav .navbar-brand1 {
+    color: rgb(0, 0, 0);
+  }
+  #mainNav .navbar-brand1:focus,
+  #mainNav .navbar-brand1:hover {
+    color: #ff9011;
+  }
+  #mainNav .navbar-nav > li.nav-item1 > a.nav-link {
+    padding: 0.5rem 1rem;
+  }
+  #mainNav .navbar-nav > li.nav-item1 > a.nav-link,
+  #mainNav .navbar-nav > li.nav-item1 > a.nav-link:focus {
+    color: rgba(0, 0, 0, 0.7);
+  }
+  #mainNav .navbar-nav > li.nav-item1 > a.nav-link:focus:hover,
+  #mainNav .navbar-nav > li.nav-item1 > a.nav-link:hover {
+    color: rgb(255, 141, 10);
+  }
+  #mainNav.navbar-shrink {
+    border-bottom: 1px solid rgba(33, 37, 41, 0.1);
+    background-color: rgb(0, 0, 0);
+  }
+  #mainNav.navbar-shrink .navbar-brand1 {
+    color: #f05f40;
+  }
+  #mainNav.navbar-shrink .navbar-brand1:focus,
+  #mainNav.navbar-shrink .navbar-brand1:hover {
+    color: #f05f40;
+  }
+  #mainNav.navbar-shrink .navbar-nav > li.nav-item1 > a.nav-link,
+  #mainNav.navbar-shrink .navbar-nav > li.nav-item1 > a.nav-link:focus {
+    color: #000000;
+  }
+  #mainNav.navbar-shrink .navbar-nav > li.nav-item1> a.nav-link:focus:hover,
+  #mainNav.navbar-shrink .navbar-nav > li.nav-item1 > a.nav-link:hover {
+    color: #f05f40;
+  }
+}
+header.masthead {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 56px);
+  background-image: url(../img/donor.jpg);
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+header.masthead hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+header.masthead h1 {
+  font-size: 2rem;
+}
+header.masthead p {
+  font-weight: 300;
+}
+@media (min-width: 768px) {
+  header.masthead p {
+    font-size: 1.15rem;
+  }
+}
+@media (min-width: 992px) {
+  header.masthead {
+    height: 100vh;
+    min-height: 650px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1200px) {
+  header.masthead h1 {
+    font-size: 4rem;
+  }
+}
+.service-box {
+  max-width: 400px;
+}
+.navbar-default .navbar-nav > li.clr1 a{
+        color:#000000;
+}
+.navbar-default .navbar-nav > li.clr2 a{
+    color: #FFEB3B;;
+}
+.navbar-default .navbar-nav > li.clr3 a{
+    color: #5EC64D;
+}
+.navbar-default .navbar-nav > li.clr4 a{
+    color: rgb(243, 48, 13);
+}
+.navbar-default .navbar-nav > li.clr5 a{
+    color: #CEE229;
+}
+
+.navbar-default .navbar-nav > li.clr1.active a{
+    color:rgb(0, 0, 0);
+    background: #F55;
+}
+.navbar-default .navbar-nav > li.clr1 a:hover{
+    background: rgba(255, 85, 85, 0.75);
+} 
+.navbar-default .navbar-nav > li.clr2.active a{
+    color: rgb(0, 0, 0);
+    background:#973CB6;
+}
+.navbar-default .navbar-nav > li.clr2 a:hover{
+ background: rgba(151, 60, 182, 0.66)
+}
+
+
+.navbar-default .navbar-nav > li.clr3.active a{
+    color: rgb(0, 0, 0);
+    background:#5EC64D;
+}
+.navbar-default .navbar-nav > li.clr3 a:hover
+{
+  background: rgba(94, 198, 77, 0.78);
+}
+.navbar-default .navbar-nav > li.clr4.active a{
+    color: rgb(0, 0, 0);
+    background: rgb(255, 52, 45);
+}
+.navbar-default .navbar-nav > li.clr4 a:hover{
+    background: rgba(255, 39, 39, 0.62);
+}
+
+.navbar-default .navbar-nav > li.clr5.active a{
+    color: #fff;
+    background: #CEE229;
+}
+.navbar-default .navbar-nav > li.clr5 a:hover{
+    background: rgba(206, 226, 41, 0.63);
+}
+.navbar-default{
+    background-color: #ec2b2b;
+    font-size:18px;
+    border-color:none;
+}
+.navbar-default .navbar-brand {
+    color: #000000;
+    font-weight:bold;
+}
+.navbar-default .navbar-text {
+    color:#000000;
+}
+
+.pemisah-btnnav{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.recent{
+    padding-top:20px;
+    
+}
+.info-meta{
+    padding-top: 10px;
+    color:#9999;
+}
+a:focus, 
+a:hover {
+text-decoration: none;
+outline: none;
+color: #9c9c9c;
+}
+.footer-bottom {
+background-color:#3b5998;
+color:#fff;
+padding-top:10px;
+padding-bottom:10px;
+}
